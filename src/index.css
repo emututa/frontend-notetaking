@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Notes App Design System - Beautiful colors and gradients */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 263 70% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 263 70% 50%;
+
+    --radius: 0.75rem;
+
+    /* Category Colors */
+    --personal: 217 91% 60%;
+    --work: 142 71% 45%;
+    --secrets: 0 84% 60%;
+    --favourite: 45 93% 47%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(263 70% 50%), hsl(283 70% 60%));
+    --gradient-personal: linear-gradient(135deg, hsl(217 91% 60%), hsl(237 91% 70%));
+    --gradient-work: linear-gradient(135deg, hsl(142 71% 45%), hsl(162 71% 55%));
+    --gradient-secrets: linear-gradient(135deg, hsl(0 84% 60%), hsl(20 84% 70%));
+    --gradient-favourite: linear-gradient(135deg, hsl(45 93% 47%), hsl(65 93% 57%));
+    
+    /* Shadows */
+    --shadow-card: 0 4px 12px -2px hsl(222.2 84% 4.9% / 0.08);
+    --shadow-hover: 0 8px 25px -5px hsl(222.2 84% 4.9% / 0.15);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 263 70% 60%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 263 70% 60%;
+
+    /* Category Colors - Dark Mode */
+    --personal: 217 91% 70%;
+    --work: 142 71% 55%;
+    --secrets: 0 84% 70%;
+    --favourite: 45 93% 57%;
+
+    /* Gradients - Dark Mode */
+    --gradient-primary: linear-gradient(135deg, hsl(263 70% 60%), hsl(283 70% 70%));
+    --gradient-personal: linear-gradient(135deg, hsl(217 91% 70%), hsl(237 91% 80%));
+    --gradient-work: linear-gradient(135deg, hsl(142 71% 55%), hsl(162 71% 65%));
+    --gradient-secrets: linear-gradient(135deg, hsl(0 84% 70%), hsl(20 84% 80%));
+    --gradient-favourite: linear-gradient(135deg, hsl(45 93% 57%), hsl(65 93% 67%));
+    
+    /* Shadows - Dark Mode */
+    --shadow-card: 0 4px 12px -2px hsl(0 0% 0% / 0.3);
+    --shadow-hover: 0 8px 25px -5px hsl(0 0% 0% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Custom animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+}

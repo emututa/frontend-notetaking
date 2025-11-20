@@ -59,7 +59,7 @@ export default function NewNote() {
 
     try {
       // Send to backend API via proxy
-      const response = await fetch('/api/notes', {
+      const response = await fetch('https://backendnote-app3.onrender.com/api/notes', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ export default function NewNote() {
           title: title.trim(),
           content: content.trim(),
           category,
-          color: selectedColor.hex, // Send just the hex value, not the whole object
+          color: selectedColor.hex, 
         }),
       });
 

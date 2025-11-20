@@ -127,7 +127,7 @@ export default function AudioRecorder({ onTranscriptionComplete }: AudioRecorder
       const formData = new FormData();
       formData.append("audio", correctedBlob, "recording.wav");
 
-      const res = await fetch("http://localhost:5000/api/notes/transcription", {
+      const res = await fetch("https://backendnote-app3.onrender.com/api/notes/transcription", {
         method: "POST",
         body: formData,
       });

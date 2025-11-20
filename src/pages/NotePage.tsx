@@ -71,7 +71,7 @@ export default function NotePage() {
   useEffect(() => {
     const fetchNote = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/notes/${id}`);
+        const res = await fetch(`https://backendnote-app3.onrender.com/api/notes/${id}`);
         if (!res.ok) throw new Error("Failed to fetch note");
         const data = await res.json();
         setNote(data);
@@ -88,7 +88,7 @@ export default function NotePage() {
   const handleSaveEdit = async () => {
     if (!note) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/notes/${note._id}`, {
+      const res = await fetch(`https://backendnote-app3.onrender.com/api/notes/${note._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -112,7 +112,7 @@ export default function NotePage() {
     if (!note) return;
     if (!confirm("Are you sure you want to delete this note?")) return;
     try {
-      await fetch(`http://localhost:5000/api/notes/${note._id}`, {
+      await fetch(`https://backendnote-app3.onrender.com/api/notes/${note._id}`, {
         method: "DELETE",
       });
       navigate(`/notes`);

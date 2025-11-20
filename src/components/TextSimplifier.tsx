@@ -33,7 +33,7 @@ export default function TextSimplifier({
     setError('');
 
     try {
-      const res = await fetch('http://localhost:5000/api/notes/summary', {
+      const res = await fetch('https://backendnote-app3.onrender.com/api/notes/summary', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ noteText: originalText }),

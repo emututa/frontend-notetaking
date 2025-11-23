@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-    // Add proxy to avoid CORS issues
+    // Add proxy to avoid CORS issue
     proxy: {
       '/api': {
         target: 'http://localhost:5001',

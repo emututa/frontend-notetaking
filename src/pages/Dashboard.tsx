@@ -381,7 +381,8 @@ export default function Dashboard() {
         {/* Logo */}
         <div className="p-6 border-b border-gray-200">
           <div className="flex items-center gap-2 mb-1">
-            <FileText className="w-6 h-6 text-blue-600" />
+            {/* <FileText className="w-6 h-6 text-blue-600" /> */}
+             <img src="/imgs/logo.png" alt=""  width={60} height={20} />
             <span className="font-bold text-xl">Take Note</span>
           </div>
           <p className="text-xs text-gray-500">Smart Notes 2025</p>

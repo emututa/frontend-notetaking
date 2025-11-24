@@ -305,31 +305,32 @@ export default function CategoryPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className={`${currentCategory.bg} border-b border-gray-200`}>
-        <div className="max-w-7xl mx-auto px-8 py-8">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <Link to="/" className="p-2 hover:bg-white/50 rounded-lg">
-                <ArrowLeft className={`w-6 h-6 ${currentCategory.text}`} />
-              </Link>
-              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${currentCategory.gradient} flex items-center justify-center`}>
-                <Icon className="w-8 h-8 text-white" />
-              </div>
-              <div>
-                <h1 className={`text-4xl font-bold ${currentCategory.text}`}>{currentCategory.name}</h1>
-                <p className="text-gray-600 mt-1">{notes.length} notes</p>
-              </div>
-            </div>
-            <Link to="/create">
-              <button className={`bg-gradient-to-r ${currentCategory.gradient} text-white px-6 py-3 rounded-lg hover:opacity-90`}>
-                <Plus className="w-5 h-5 inline mr-2" />
-                New Note
-              </button>
-            </Link>
+     
+  {/* Header */}
+  <div className={`${currentCategory.bg} border-b border-gray-200`}>
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-0">
+        <div className="flex items-center gap-3 sm:gap-4 w-full sm:w-auto">
+          <Link to="/" className="p-2 hover:bg-white/50 rounded-lg flex-shrink-0">
+            <ArrowLeft className={`w-5 h-5 sm:w-6 sm:h-6 ${currentCategory.text}`} />
+          </Link>
+          <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-xl sm:rounded-2xl bg-gradient-to-br ${currentCategory.gradient} flex items-center justify-center flex-shrink-0`}>
+            <Icon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-white" />
+          </div>
+          <div>
+            <h1 className={`text-2xl sm:text-3xl lg:text-4xl font-bold ${currentCategory.text}`}>{currentCategory.name}</h1>
+            <p className="text-sm sm:text-base text-gray-600 mt-0.5 sm:mt-1">{notes.length} notes</p>
           </div>
         </div>
+        <Link to="/notes/new" className="w-full sm:w-auto">
+          <button className={`bg-gradient-to-r ${currentCategory.gradient} text-white px-4 py-2.5 sm:px-5 sm:py-3 lg:px-6 lg:py-3 rounded-lg hover:opacity-90 w-full sm:w-auto text-sm sm:text-base`}>
+            <Plus className="w-4 h-4 sm:w-5 sm:h-5 inline mr-2" />
+            New Note
+          </button>
+        </Link>
       </div>
+    </div>
+  </div>
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-8 py-8">
